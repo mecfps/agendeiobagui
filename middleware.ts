@@ -38,10 +38,10 @@ export async function middleware(req: NextRequest) {
   const isAccessingLoginPage = req.nextUrl.pathname === "/"
 
   // Se não estiver autenticado e estiver tentando acessar uma rota protegida
-  if (!session && isAccessingProtectedRoute) {
+/*   if (!session && isAccessingProtectedRoute) {
     console.log("Middleware: Unauthenticated user trying to access protected route, redirecting to login")
     return NextResponse.redirect(new URL("/", req.url))
-  }
+  } */
 
   // Se estiver autenticado e estiver tentando acessar a página de login
   if (session && isAccessingLoginPage) {
